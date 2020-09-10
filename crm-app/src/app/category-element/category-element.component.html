@@ -1,0 +1,40 @@
+<div>
+    <h2>Categories</h2>
+    <div  *ngIf="category">
+        <h3>
+            {{category.name}}
+        </h3>
+    </div>
+    <br>
+    <br>
+    <div> 
+        Add new product  
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit(productForm.value)">
+            <fieldset>
+                <div>
+                    <input type="text"
+                    placeholder="Name" formControlName="name" />
+                </div>
+                <div>
+                    <input type="text"
+                    placeholder="Price" formControlName="price" />
+                </div>
+                <div>
+                    <input type="text"
+                    placeholder="Quantity" formControlName="quantity" />
+                </div>
+                <button type="submit">
+                    Save
+                </button>
+            </fieldset>
+        </form>
+    </div>
+    <div>
+        <ul>
+            <li *ngFor="let product of products">
+                {{product.name}}      <button (click)="deleteProduct(product._id)">Delete</button>
+            </li>
+        </ul>
+    </div>
+</div>
+<button (click)="goBack()">go back</button>

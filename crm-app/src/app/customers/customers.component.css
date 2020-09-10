@@ -1,0 +1,16 @@
+nav {
+    float: left;
+}
+
+.add-form {
+    float: right;
+}
+
+.formbtn{
+    float: right;
+}
+
+ul{
+    display: table;
+    margin: 0 auto;
+}

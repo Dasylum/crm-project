@@ -1,0 +1,46 @@
+<h2 style="text-align: center;">Customers</h2>
+<nav>
+    <a routerLink="/customers">Customers</a>
+    <br><br><br>
+    <a routerLink="/products">Products</a> <br><br><br>
+    <a routerLink="/dashboard">Dashboard</a> <br><br><br><br><br><br><br><br>
+    <button (click)="logout()">Logout</button>
+</nav>
+<div class="add-form"> 
+    <button id="formbtn" (click)="onClick()">Add new customer</button>
+    <button id="cancelbtn" (click)="goback()" style="display: none;">Cancel</button>
+    <form [formGroup]="customerForm" (ngSubmit)="onSubmit(customerForm.value)" id="form" style="display: none;">
+        <div>
+            <input type="text"
+            placeholder="First Name" formControlName="firstName" required/>
+        </div> <br>
+        <div>
+            <input type="text"
+            placeholder="Last Name" formControlName="lastName" />
+        </div> <br>
+        <div>
+            <input type="text"
+            placeholder="Username" formControlName="username" />
+        </div> <br>
+        <div>
+            <input type="text"
+            placeholder="Password" formControlName="password" />
+        </div> <br>
+        <div>
+            Membership
+            <input type="checkbox" formControlName="memberStatus" />
+        </div> <br>
+        <button type="submit">
+            Save
+        </button>
+    </form>
+</div>
+<br>
+<app-customer-search></app-customer-search>
+<div class="customers">
+    <ul>
+        <li *ngFor="let customer of customers">
+            {{customer.firstName}}
+        </li>
+    </ul>
+</div>

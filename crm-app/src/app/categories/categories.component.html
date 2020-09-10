@@ -1,0 +1,27 @@
+<h2 style="text-align: center;">Categories</h2>
+<nav>
+    <a routerLink="/dashboard">Dashboard</a> <br><br><br>
+    <a routerLink="/customers">Customers</a> <br><br><br>
+    <a routerLink="/categories">Categories</a> <br><br><br>
+    <a routerLink="/products">Products</a> <br><br><br><br><br>
+    <button (click)="logout()">Logout</button>
+</nav>
+<div class="add-form"> 
+    <button (click)="onClick()" id="formbtn">Add new category</button>
+    <button (click)="goback()" id="cancelbtn" style="display: none;">Cancel</button> <br>
+    <form [formGroup]="categoryForm" (ngSubmit)="onSubmit(categoryForm.value)" style="display: none;" id="form">
+        <div>
+            <input type="text"
+            placeholder="Name" formControlName="name" />
+        </div><br>
+        <button type="submit">
+            Save
+        </button>
+    </form>
+</div>
+<ul>
+   <li *ngFor="let category of categories">
+        <a routerLink="/category/{{category._id}}">{{category.name}}</a>
+   </li> 
+</ul>
+<router-outlet></router-outlet>

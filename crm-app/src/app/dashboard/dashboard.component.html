@@ -1,0 +1,12 @@
+<h2 style="text-align: center;">Dashboard</h2>
+<nav>
+    <a routerLink="/customers">Customers</a>
+    <br><br><br>
+    <a routerLink="/products">Products</a> <br><br><br>
+    <a routerLink="/dashboard">Dashboard</a> <br><br><br><br><br><br><br><br>
+    <button (click)="logout()">Logout</button>
+</nav>
+<div class="userGreet" *ngIf="user">
+    Welcome back {{user.user.username}}
+</div>
+<router-outlet></router-outlet>

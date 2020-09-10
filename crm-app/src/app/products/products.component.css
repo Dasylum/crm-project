@@ -1,0 +1,8 @@
+nav {
+    float: left;
+}
+
+ul{
+    display: table;
+    margin: 0 auto;
+}

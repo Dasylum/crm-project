@@ -1,0 +1,11 @@
+<div class="search">
+    <h4>Customer Search</h4>
+
+    <input type="text" #searchbox (input)="search(searchbox.value)" />
+
+    <ul>
+        <li *ngFor="let customer of customers$ | async">
+            {{customer.firstName}}
+        </li>
+    </ul>
+</div>

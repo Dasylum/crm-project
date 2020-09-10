@@ -1,0 +1,15 @@
+<h2>Orders</h2>
+<nav>
+    <a routerLink="/customers">Customers</a>
+    <a routerLink="/products">Products</a>
+    <a routerLink="/dashboard">Dashboard</a>
+    <button (click)="logout()">Logout</button>
+</nav>
+<div>
+    <ul>
+        <li *ngFor="let order of orders">
+            {{order.product}} -----------> {{order.customer}}
+        </li>
+    </ul>
+</div>
+<router-outlet></router-outlet>

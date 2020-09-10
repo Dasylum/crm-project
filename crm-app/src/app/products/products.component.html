@@ -1,0 +1,17 @@
+<h2 style="text-align: center;">Products</h2>
+<nav>
+    <a routerLink="/dashboard">Dashboard</a> <br><br><br>
+    <a routerLink="/customers">Customers</a> <br><br><br>
+    <a routerLink="/categories">Categories</a> <br><br><br>
+    <a routerLink="/products">Products</a><br><br><br><br><br>
+    <div *ngIf="user">
+        <button (click)="logout()">Logout</button>
+    </div>
+</nav>
+
+<ul>
+   <li *ngFor="let product of products">
+        {{product.name}}       <button (click)="order(product._id, user.user._id)">Buy</button>
+   </li> 
+</ul>
+<router-outlet></router-outlet>
